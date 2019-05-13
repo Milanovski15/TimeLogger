@@ -39,13 +39,13 @@ appRoutes.post('/event', async(req, res) => {
                 userId = userNew.id;
             }
 
-            if(incomingData.event.text.toLowerCase() === "hello" || incomingData.event.text.toLowerCase()=== "hi" || incomingData.event.text.toLowerCase()=="zdravo" ){
+            if(incomingData.event.text.toLowerCase() === "hello" || incomingData.event.text.toLowerCase()=== "hi" || incomingData.event.text.toLowerCase()=="zdravo"|| incomingData.event.text.toLowerCase()=="bonjour" || incomingData.event.text.toLowerCase()=="salut" || incomingData.event.text.toLowerCase()=="ola"  ){
                 await userServices.startWorkingTime(userId);
-            }else if(incomingData.event.text.toLowerCase() === "bye" || incomingData.event.text.toLowerCase()=== "good bye" || incomingData.event.text.toLowerCase()=="cao"){
+            }else if(incomingData.event.text.toLowerCase() === "bye" || incomingData.event.text.toLowerCase()=== "goodbye" || incomingData.event.text.toLowerCase()=="cao"|| incomingData.event.text.toLowerCase()=="au revoir"|| incomingData.event.text.toLowerCase()=="adios"){
                 await userServices.endWorkingTime(userId);
-            }else if(incomingData.event.text.toLowerCase() === "pause" || incomingData.event.text.toLowerCase()=== "start pause" || incomingData.event.text.toLowerCase()=="pauza" ){
+            }else if(incomingData.event.text.toLowerCase() === "pause" || incomingData.event.text.toLowerCase()=== "start pause" || incomingData.event.text.toLowerCase()=="pauza"|| incomingData.event.text.toLowerCase()=="pausa" ){
                 await userServices.startPauseTime(userId);
-            }else if(incomingData.event.text.toLowerCase() === "end pause" || incomingData.event.text.toLowerCase()=== "" || incomingData.event.text.toLowerCase()=="kraj pauza" ){
+            }else if(incomingData.event.text.toLowerCase() === "end pause" || incomingData.event.text.toLowerCase()=="kraj pauza"|| incomingData.event.text.toLowerCase()=="fin de pausa" ){
                 await userServices.endPauseTime(userId);
             }
         }

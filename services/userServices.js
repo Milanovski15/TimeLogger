@@ -30,7 +30,7 @@ const findUserBySlackId = async (slackId) => {
 
 };
 exports.findUserBySlackId = findUserBySlackId;
-//  novi napraeni !!!
+
 const insertUser= async(add) => {
 
    return  userModel.create(
@@ -156,7 +156,6 @@ const startPauseTime= async(id) =>{
 
 };
 exports.startPauseTime=startPauseTime;
-
 
 const endPauseTime = async(id) =>{
     let now = moment(new Date()).format(dateFormat);
