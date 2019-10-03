@@ -1,5 +1,5 @@
 {
-  "name": "Working time app",
+  "name": "time_logger",
   "version": "0.0.0",
   "description": "Application for working time",
   "private": true,
