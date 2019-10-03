@@ -1,6 +1,5 @@
 const mongoose = require("mongoose");
 const conn = require("../dbconnect");
-
 const Person = new mongoose.Schema({
         name: {
             type: String
@@ -42,5 +41,4 @@ const Person = new mongoose.Schema({
         usePushEach: true
     }
 );
-
 module.exports = conn.model('person', Person);

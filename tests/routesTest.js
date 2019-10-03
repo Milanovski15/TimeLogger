@@ -56,8 +56,8 @@ describe('routes',function(){
     it("Should update a users information from the database.",function(done){
 
         let data= {
-            name:"Stefannnn",
-            surname:"Milanovskiiiiii",
+            name:"Marko",
+            surname:"Markovski",
             active:true
         };
 
@@ -74,8 +74,8 @@ describe('routes',function(){
                 res.body.should.have.property('active');
 
                 res.body._id.should.equal(userID);
-                res.body.name.should.equal("Stefannnn");
-                res.body.surname.should.equal("Milanovskiiiiii");
+                res.body.name.should.equal("Marko");
+                res.body.surname.should.equal("Markovski");
 
                 done();
             })
@@ -91,8 +91,6 @@ describe('routes',function(){
                 res.should.be.json;
                 done();
             })
-
-
     });
 
 

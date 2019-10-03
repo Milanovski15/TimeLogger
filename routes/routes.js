@@ -32,6 +32,7 @@ appRoutes.route('/add').post(async function(req,res){
        name:add.name,
        surname:add.surname,
        active:add.active,
+       email:add.email,
        card:add.null
    });
     if (!per) {
@@ -40,17 +41,6 @@ appRoutes.route('/add').post(async function(req,res){
         res.status(200).json(per);
     }
 
-});
-
-//delete a user from the db
-appRoutes.route('/delete/:id').get(async function(req,res, next){
-    let id=req.params.id;
-    appModel.findByIdAndRemove(id, function (err){
-        if(err){
-            return next (new Error ('User is not found !!!' ));
-        }
-        res.json('The user is successfully removed');
-    });
 });
 
 
@@ -119,3 +109,14 @@ appRoutes.route('/endP/:id').post(async function (req,res,next){
 });
 
 module.exports=appRoutes;
+
+//delete a user from the db
+appRoutes.route('/delete/:id').get(async function(req,res, next){
+    let id=req.params.id;
+    appModel.findByIdAndRemove(id, function (err){
+        if(err){
+            return next (new Error ('User is not found !!!' ));
+        }
+        res.json('The user is successfully removed');
+    });
+});
